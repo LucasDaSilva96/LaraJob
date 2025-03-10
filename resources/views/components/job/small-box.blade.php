@@ -14,14 +14,14 @@
         <h1 class="text-2xl font-bold group-hover:text-blue-500">{{ $title }}</h1>
 
 
-        <p class="font-light text-base">{{ $salary }}</p>
+        <p class="font-light text-base">From - {{ $salary }}$</p>
     </div>
 
     <div class="flex justify-between items-end">
 
         <div class="flex gap-2 max-w-[75%] overflow-x-auto no-scrollbar">
             @foreach ($tags as $tag)
-                <x-tag class="text-[0.625rem]" href="#">{{ $tag }}</x-tag>
+                <x-tag class="text-[0.625rem]" href="#">{{ $tag['name'] }}</x-tag>
             @endforeach
         </div>
 

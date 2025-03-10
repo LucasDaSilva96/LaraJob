@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Tag;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -24,6 +25,7 @@ class JobFactory extends Factory
             'schedule' => $this->faker->randomElement(['Full-time', 'Part-time', 'Contract', 'Temporary', 'Internship']),
             'url' => $this->faker->url(),
             'featured' => $this->faker->boolean(),
+            'tags' => Tag::factory()->count(3)->create()
         ];
     }
 }

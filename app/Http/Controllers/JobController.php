@@ -6,6 +6,7 @@ use App\Models\Job;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreJobRequest;
 use App\Http\Requests\UpdateJobRequest;
+use App\Models\Tag;
 
 class JobController extends Controller
 {
@@ -14,7 +15,15 @@ class JobController extends Controller
      */
     public function index()
     {
-        //
+        $jobs = Job::all();
+        $tags = Tag::all();
+        $featured_jobs = Job::where('featured', 1)->limit(3)->get();
+
+        return view('jobs', [
+            'jobs' => $jobs,
+            'tags'=> $tags,
+            'featured_jobs' => $featured_jobs
+        ]);
     }
 
     /**
