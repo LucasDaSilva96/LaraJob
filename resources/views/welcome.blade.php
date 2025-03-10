@@ -14,11 +14,29 @@
 
         </div>
 
+
+        <x-topic-heading class="bg-slate-50" isHeading="true">
+            Tags
+        </x-topic-heading>
+
+        <div class="w-full flex items-center gap-4 flex-wrap py-3">
+            <x-tag class="text-base" href="#">Tag</x-tag>
+            <x-tag class="text-base" href="#">Tag</x-tag>
+            <x-tag class="text-base" href="#">Tag</x-tag>
+            <x-tag class="text-base" href="#">Tag</x-tag>
+            <x-tag class="text-base" href="#">Tag</x-tag>
+            <x-tag class="text-base" href="#">Tag</x-tag>
+            <x-tag class="text-base" href="#">Tag</x-tag>
+            <x-tag class="text-base" href="#">Tag</x-tag>
+        </div>
+
+
+
         <x-topic-heading class="bg-slate-50" isHeading="true">
             Top Jobs
         </x-topic-heading>
 
-        <div class="w-full flex items-center justify-between gap-4 flex-wrap">
+        <div class="w-full flex items-center justify-between gap-4 flex-wrap pb-4">
 
 
             <x-job.small-box
@@ -46,6 +64,41 @@
             logo="https://placehold.co/600x400"
             />
 
+
+        </div>
+
+        <x-topic-heading class="bg-slate-50" isHeading="true">
+            Recent Jobs
+        </x-topic-heading>
+
+        <div class="flex flex-col gap-6 ">
+
+            <x-job.box
+            title="Programmer"
+            company="Laracasts"
+            salary="From $60,000"
+            :tags="['Tag', 'Tag', 'Tag']"
+            logo="https://placehold.co/600x400"
+            :perks="['Perk', 'Perk', 'Perk']"
+            />
+
+              <x-job.box
+            title="Programmer"
+            company="Laracasts"
+            salary="From $60,000"
+            :tags="['Tag', 'Tag', 'Tag']"
+            logo="https://placehold.co/600x400"
+            :perks="['Perk', 'Perk', 'Perk']"
+            />
+
+              <x-job.box
+            title="Programmer"
+            company="Laracasts"
+            salary="From $60,000"
+            :tags="['Tag', 'Tag', 'Tag']"
+            logo="https://placehold.co/600x400"
+            :perks="['Perk', 'Perk', 'Perk']"
+            />
 
         </div>
 
