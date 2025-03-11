@@ -15,11 +15,34 @@
         <a class="transition-colors text-slate-50 hover:text-blue-500" href="#">Companies</a>
     </div>
 
-    <a href="#" class="flex items-center gap-0.5 text-slate-50 hover:text-blue-500
-    transition-colors">
+    @auth
+        <a href="#" class="flex items-center gap-0.5 text-slate-50 hover:text-blue-500
+        transition-colors">
         <x-topic-heading class="bg-blue-500">
             Post a Job
         </x-topic-heading>
-    </a>
+        </a>
+
+        <form action="/logout" method="POST">
+            @csrf
+            @method('POST')
+            <button type="submit" class="flex items-center gap-0.5 text-slate-50 hover:text-blue-500
+            transition-colors cursor-pointer">
+            <x-topic-heading class="bg-blue-500">
+                Logout
+            </x-topic-heading>
+            </button>
+        </form>
+    @endauth
+
+    @guest
+        <div class="flex items-center gap-8">
+            <a href="{{route('login')}}" class="transition
+            -colors text-slate-50 hover:text-blue-500">Login</a>
+
+            <a href="{{route('store')}}" class="transition
+            -colors text-slate-50 hover:text-blue-500">Register</a>
+        </div>
+    @endguest
 
 </nav>
