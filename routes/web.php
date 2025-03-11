@@ -13,12 +13,19 @@ Route::get('/register', [RegisteredUserController::class, 'create'])->name('regi
 Route::post('/register', [RegisteredUserController::class, 'store'])->name('register.store');
 
 // ---------------------------- Auth  ----------------------------
-Route::get('/login', [SessionController::class, 'create'])->name('login');
 
-Route::get('/store', [SessionController::class,'store'])->name('store');
+// Middleware for NOT-authenticated users
+Route::middleware('guest')->group(function(){
 
-Route::post('/login', [SessionController::class, 'login'])->name('login.store');
+    Route::get('/login', [SessionController::class, 'create'])->name('login');
 
-Route::post('/register', [SessionController::class, 'register'])->name('register');
+    Route::get('/store', [SessionController::class,'store'])->name('store');
 
-Route::post('/logout', [SessionController::class, 'destroy'])->name('logout');
+    Route::post('/login', [SessionController::class, 'login'])->name('login.store');
+
+    Route::post('/register', [SessionController::class, 'register'])->name('register');
+});
+
+
+
+Route::post('/logout', [SessionController::class, 'destroy'])->name('logout')->middleware('auth');
