@@ -23,17 +23,18 @@
 
     <div class="h-full flex flex-col justify-between">
 
-        <div class="flex gap-2">
+
+        {{-- <div class="flex gap-2">
             @foreach ($schedule as $perk)
             <span class="border border-neutral-600 py-0.5 px-4 rounded-full">{{ $perk }}</span>
-            @endforeach
-        </div>
 
-        <div class="flex gap-2">
+        </div> --}}
+
+        {{-- <div class="flex gap-2">
             @foreach ($tags as $tag)
             <x-tag class="text-[0.625rem]" href="#">{{ $tag }}</x-tag>
             @endforeach
-        </div>
+        </div> --}}
 
 
     </div>

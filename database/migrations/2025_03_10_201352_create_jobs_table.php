@@ -15,12 +15,12 @@ return new class extends Migration
     {
         Schema::create('jobs', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Employer::class)->nullable(false);
-            $table->string('title')->nullable(false);
-            $table->string('salary')->nullable(false);
-            $table->string('location')->nullable(false);
+            $table->foreignIdFor(Employer::class);
+            $table->string('title');
+            $table->string('salary');
+            $table->string('location');
             $table->string('schedule')->default('Full-time');
-            $table->string('url')->nullable(false);
+            $table->string('url');
             $table->boolean('featured')->default(false);
             $table->timestamps();
         });

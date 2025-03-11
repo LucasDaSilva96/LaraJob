@@ -22,6 +22,11 @@ class Job extends Model
         'tags',
     ];
 
+    public function tag(string $tag){
+        $tag = Tag::firstOrCreate(['name' => $tag]);
+        $this->tags()->attach($tag);
+    }
+
     public function employer(){
         return $this->belongsTo(Employer::class);
     }

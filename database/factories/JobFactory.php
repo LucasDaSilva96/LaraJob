@@ -20,12 +20,11 @@ class JobFactory extends Factory
         return [
             'title' => $this->faker->jobTitle(),
             'location' => $this->faker->city(),
-            'salary' => $this->faker->randomFloat(2, 1000, 9000),
-            'employer_id' => \App\Models\Employer::factory()->create()->id,
+            'salary' => fake()->randomElement(['$50,000 USD', '$90,000 USD', '$150,000 USD', '$200,000 USD', '$250,000 USD']),
+            'employer_id' => \App\Models\Employer::factory(),
             'schedule' => $this->faker->randomElement(['Full-time', 'Part-time', 'Contract', 'Temporary', 'Internship']),
             'url' => $this->faker->url(),
             'featured' => $this->faker->boolean(),
-            'tags' => Tag::factory()->count(3)->create()
         ];
     }
 }
