@@ -15,29 +15,41 @@
                    <div>
                     <label for="name" class="block text-sm/6 font-medium ">Name</label>
                     <div>
-                        <input type="text" name="name" id="name" autocomplete="name" required class="block w-full rounded-md text-black bg-white px-3 py-1.5 text-base  outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+                        <input value="{{old('name')}}" type="text" name="name" id="name" autocomplete="name" required class="block w-full rounded-md text-black bg-white px-3 py-1.5 text-base  outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
                     </div>
+                     @error('name')
+                    <p class="text-red-500 text-sm/6">{{ $message }}</p>
+                    @enderror
                 </div>
 
                 <div>
                     <label for="email" class="block text-sm/6 font-medium ">Email address</label>
                     <div>
-                        <input type="email" name="email" id="email" autocomplete="email" required class="block w-full rounded-md text-black bg-white px-3 py-1.5 text-base  outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+                        <input value="{{old('email')}}" type="email" name="email" id="email" autocomplete="email" required class="block w-full rounded-md text-black bg-white px-3 py-1.5 text-base  outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
                     </div>
+                     @error('email')
+                    <p class="text-red-500 text-sm/6">{{ $message }}</p>
+                    @enderror
                 </div>
 
                    <div>
                     <label for="Employer" class="block text-sm/6 font-medium ">Employer</label>
                     <div>
-                        <input type="text" name="employer" id="employer" autocomplete="none" required class="block w-full rounded-md bg-white text-black px-3 py-1.5 text-base  outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+                        <input value="{{old('employer')}}" type="text" name="employer" id="employer" autocomplete="none" required class="block w-full rounded-md bg-white text-black px-3 py-1.5 text-base  outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
                     </div>
+                     @error('employer')
+                    <p class="text-red-500 text-sm/6">{{ $message }}</p>
+                    @enderror
                 </div>
 
                 <div>
                     <label for="logo" class="block text-sm/6 font-medium ">Logo</label>
                     <div>
-                        <input type="file" name="logo" id="logo" required class="">
+                        <input value="{{old('logo')}}" type="file" name="logo" id="logo" required class="">
                     </div>
+                     @error('logo')
+                    <p class="text-red-500 text-sm/6">{{ $message }}</p>
+                    @enderror
                 </div>
 
                 <div>
@@ -46,6 +58,9 @@
                     <div>
                         <input type="password" name="password" id="password" autocomplete="current-password" required class="block text-black w-full rounded-md bg-white px-3 py-1.5 text-base  outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
                     </div>
+                     @error('password')
+                    <p class="text-red-500 text-sm/6">{{ $message }}</p>
+                    @enderror
                 </div>
 
                  <div>
@@ -54,6 +69,9 @@
                     <div>
                         <input type="password" name="password_confirmation" id="password_confirmation" autocomplete="none" required class="block text-black w-full rounded-md bg-white px-3 py-1.5 text-base  outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
                     </div>
+                   @error('password')
+                    <p class="text-red-500 text-sm/6">{{ $message }}</p>
+                    @enderror
                 </div>
 
                 <div>

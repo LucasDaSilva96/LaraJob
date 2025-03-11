@@ -2,17 +2,21 @@
 
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\RegisteredUserController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [JobController::class, 'index'])->name('jobs.index');
 
-// ---------------------------- Register Job  ----------------------------
+// ---------------------------- Search Job
+Route::post('/search', [SearchController::class, 'search'])->name('jobs.search');
+
+// ---------------------------- Register Job
 Route::get('/register', [RegisteredUserController::class, 'create'])->name('register');
 
 Route::post('/register', [RegisteredUserController::class, 'store'])->name('register.store');
 
-// ---------------------------- Auth  ----------------------------
+// ---------------------------- Auth
 
 // Middleware for NOT-authenticated users
 Route::middleware('guest')->group(function(){

@@ -13,7 +13,7 @@
 
         <img src="{{$logo }}" alt="logo" class="h-full w-auto max-w-[180px] object-contain rounded-lg">
         <div class="h-full flex flex-col justify-evenly">
-            <p class="opacity-80 font-semibold">{{ $company }}</p>
+            {{-- <p class="opacity-80 font-semibold">{{ $company }}</p> --}}
             <h1 class="font-bold text-2xl group-hover:text-blue-500">{{ $title }}</h1>
             <p class="opacity-80 font-semibold">From {{ $salary }}$</p>
         </div>

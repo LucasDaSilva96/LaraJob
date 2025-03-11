@@ -6,8 +6,8 @@
     'logo' => '',
 ])
 
-<article {{ $attributes->merge(['class' => 'w-[370px] h-[250px] rounded-md bg-neutral-900 p-2.5 flex flex-col justify-between group transition-all border border-transparent hover:border-blue-500']) }}>
-    <p class="text-lg font-semibold">{{ $company }}</p>
+<article {{ $attributes->merge(['class' => 'w-[370px] h-[250px] rounded-md bg-neutral-900 p-2.5 flex flex-col justify-evenly group transition-all border border-transparent hover:border-blue-500']) }}>
+    {{-- <p class="text-lg font-semibold">{{ $company }}</p> --}}
 
     <div class="text-center space-y-3">
 
